@@ -9,7 +9,6 @@ var mongostore = require('connect-mongo')(session);
 const expressLayouts = require('express-ejs-layouts');
 const expressValidator = require('express-validator');
 const passport = require('passport');
-const pug = require('pug');
 var indexRouter = require('/Users/adityabhatnagar1/streamingapp/express-streamingpp/streaming-app/backend/routes/index');
 var usersRouter = require('/Users/adityabhatnagar1/streamingapp/express-streamingpp/streaming-app/backend/routes/users');
 
@@ -21,10 +20,6 @@ db.once('open', function() {
 });
 
 var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
