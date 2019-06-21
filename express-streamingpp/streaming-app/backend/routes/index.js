@@ -5,7 +5,7 @@ var react = require('react');
 var reactDOM = require('react-dom')
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  return res.render('/Users/adityabhatnagar1/streamingapp/express-streamingpp/streaming-app/client/src/app.jsx');
+  res.sendFile('/Users/adityabhatnagar1/streamingapp/express-streamingpp/streaming-app/client/public/hello.html');
 });
 
 //POST route for updating data
