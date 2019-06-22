@@ -19,16 +19,31 @@ module.exports = {
             loader: 'babel-loader',
             query: {
                 presets: ["@babel/preset-env", "@babel/preset-react"],
-            }
-         }
+            },
+          } ,{
+             test: /\.css$/,
+               loader: 'style-loader'
+             }
+             , {
+               test: /\.css$/,
+               loader: 'css-loader',
+               query: {
+                 modules: true,
+                 localIdentName: '[name]__[local]___[hash:base64:5]'
+               },
+         },{
+            test: /\.(png|jpg)$/,
+            loader: 'url-loader'
+          }
       ]
    },
    resolve: {
-    extensions: ['.js', '.jsx', '.es6'],
+    extensions: ['.js', '.jsx', '.es6','.css'],
    },
    plugins:[
       new HtmlWebpackPlugin({
          template: './index.html'
-      })
+      }),
+
    ]
 }
